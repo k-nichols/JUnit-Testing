@@ -1,0 +1,41 @@
+Error 1:
+
+	In Circle.java -> scale() the scaling calculation is wrong.
+	Found by test case: scale(2).
+	Changed "+" to "*".
+
+Error 2:
+
+	In Circle.java -> moveBy() only the xOffset is added.
+	Found by test case: moveBy(1, 2).
+	Changed the second xOffset to yOffset.
+
+Error 3:
+
+	In Circle1.java -> intersects() is incorrect.
+	Found using test case: circle1 (0,0) radius 1, circle2 (0, 1) radius 1.
+	Changed to:
+		if ((Math.abs(center.x - other.center.x) > (radius + other.radius)) ||
+		    (Math.abs(center.y - other.center.y) > (radius + other.radius)))
+      			return false;
+   		return true;
+
+Error 4:
+
+	In Circle2.java -> constructor the x and y are swapped.
+	Found using test case: Circle2(1,2,3).
+	Changed from super(y,x,radius) to super(x,y,radius).
+
+Error 5:
+
+	In Circle2.java -> intersects() is incorrect.
+	Found using test case: circle1 (0,0) radius 1, circle2 (0, 1) radius 1.
+	Changed to:
+		double d;
+   		d = Math.pow(center.x - other.center.x, 2) + 
+       			Math.pow(center.y - other.center.y, 2);
+   		if (d <= Math.pow(radius + other.radius, 2))
+      			return true;
+   		else
+      			return false;
+
